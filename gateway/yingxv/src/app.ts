@@ -2,14 +2,13 @@
  * @Author: fuRan NgeKaworu@gmail.com
  * @Date: 2023-03-16 15:01:23
  * @LastEditors: fuRan NgeKaworu@gmail.com
- * @LastEditTime: 2023-03-18 16:40:31
+ * @LastEditTime: 2023-03-18 16:43:23
  * @FilePath: /yuzhou/gateway/yingxv/src/app.ts
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
 import { restful } from 'edk/src/utils/http';
-
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
@@ -94,5 +93,3 @@ declare global {
     beforeinstallprompt: BeforeInstallPromptEvent;
   }
 }
-
-console.log('test1234')
