@@ -586,9 +586,9 @@ export default () => {
                   </Form.Item>
 
                   <Divider />
-                  <div>原文： </div>
+                  <strong>原文： </strong>
                   <Form.Item className={reviewStyles['form-item']}>
-                    {flag !== 'normal' ? source : <Skeleton />}
+                    {flag !== 'normal' ? <pre>{source}</pre> : <Skeleton />}
                   </Form.Item>
                 </>
               )}
@@ -618,7 +618,7 @@ export default () => {
                   <Divider />
                   <strong>原文： </strong>
                   <Form.Item className={reviewStyles['form-item']}>
-                    {flag !== 'normal' ? source : <Skeleton />}
+                    {flag !== 'normal' ? <pre>{source}</pre> : <Skeleton />}
                   </Form.Item>
                 </>
               )}
