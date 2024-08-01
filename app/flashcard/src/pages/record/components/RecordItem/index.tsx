@@ -37,12 +37,12 @@ export default ({
   record,
 }: RecordItemProps) => {
   const { _id, source, translation, exp: percent, tag } = record;
-  function clickHandler(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+  function clickHandler(e: React.MouseEvent<HTMLPreElement, MouseEvent>) {
     e.stopPropagation();
     onClick(_id);
   }
 
-  function doubleClickHandler(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+  function doubleClickHandler(e: React.MouseEvent<HTMLPreElement, MouseEvent>) {
     e.stopPropagation();
     onDoubleClick?.(_id);
   }
@@ -69,7 +69,7 @@ export default ({
   );
 
   return wrapSSR(
-    <div
+    <pre
       className={classNames(`${prefixCls}-record-card`, hashId)}
       onClick={clickHandler}
       onDoubleClick={doubleClickHandler}
@@ -84,7 +84,7 @@ export default ({
           selected && classNames(`${prefixCls}-selected`, hashId),
         )}
       />
-      <div
+      <pre
         style={{
           textIndent: '2em',
           whiteSpace: 'pre-wrap',
@@ -93,11 +93,11 @@ export default ({
         onClick={clickHandler}
       >
         {source}
-      </div>
+      </pre>
       <Divider orientation="right" plain>
         {tag}
       </Divider>
-      <div
+      <pre
         style={{
           textIndent: '2em',
           whiteSpace: 'pre-wrap',
@@ -106,7 +106,7 @@ export default ({
         onClick={clickHandler}
       >
         {translation}
-      </div>
+      </pre>
       <div className={classNames(`${prefixCls}-tools-bar`, hashId)}>
         <Button
           size="small"
@@ -128,7 +128,7 @@ export default ({
           ></Button>
         </Popconfirm>
       </div>
-    </div>,
+    </pre>,
   );
 };
 
