@@ -562,27 +562,30 @@ export default () => {
                   <strong>请在下面填入正确关键字： </strong>
                   <strong style={{ fontSize: 30 }}>{curRecord?.tag}</strong>
                   <Form.Item className={reviewStyles['form-item']}>
-                    {keywordModeSourceSplitArr?.map((i, idx) =>
-                      keywordModeSourceSplitArr?.length - 1 > idx ? (
-                        <Fragment key={curRecord + i}>
-                          {i}
-                          <Form.Item name={['answer', idx]} noStyle>
-                            <Input
-                              autoFocus={idx === 0}
-                              style={{
-                                display: 'inline-block',
-                                width: `calc(${
-                                  positionArr[idx]?.[0]?.length ?? 1
-                                }em + 2em)`,
-                              }}
-                              onKeyDown={onHotKey}
-                            />
-                          </Form.Item>
-                        </Fragment>
-                      ) : (
-                        i
-                      ),
-                    )}
+                    <pre>
+                      {keywordModeSourceSplitArr?.map((i, idx) =>
+                        keywordModeSourceSplitArr?.length - 1 > idx ? (
+                          <Fragment key={curRecord + i}>
+                            {i}
+                            <Form.Item name={['answer', idx]} noStyle>
+                              <Input
+                                autoFocus={idx === 0}
+                                style={{
+                                  display: 'inline-block',
+                                  width: `calc(${
+                                    positionArr[idx]?.[0]?.length ?? 1
+                                  }em + 2em)`,
+                                }}
+                                size="small"
+                                onKeyDown={onHotKey}
+                              />
+                            </Form.Item>
+                          </Fragment>
+                        ) : (
+                          i
+                        ),
+                      )}
+                    </pre>
                   </Form.Item>
 
                   <Divider />
