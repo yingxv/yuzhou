@@ -562,7 +562,7 @@ export default () => {
                   <strong>请在下面填入正确关键字： </strong>
                   <strong style={{ fontSize: 30 }}>{curRecord?.tag}</strong>
                   <Form.Item className={reviewStyles['form-item']}>
-                    <pre>
+                    <pre key={curRecord._id}>
                       {keywordModeSourceSplitArr?.map((i, idx) =>
                         keywordModeSourceSplitArr?.length - 1 > idx ? (
                           <Fragment key={curRecord + i}>
